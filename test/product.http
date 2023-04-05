@@ -1,0 +1,23 @@
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+  "name": "Product chi golang logger",
+  "price": 101
+}
+
+
+###
+GET http://localhost:8000/products/ae645369-19da-45df-bcbd-a7ed8aebc90f
+Content-Type: application/json
+
+###
+PUT http://localhost:8000/products/ae645369-19da-45df-bcbd-a7ed8aebc90f
+
+{
+    "name": "Product chi golang logger",
+    "price": 10100
+}
+
+###
+DELETE http://localhost:8000/products/ae645369-19da-45df-bcbd-a7ed8aebc90f
