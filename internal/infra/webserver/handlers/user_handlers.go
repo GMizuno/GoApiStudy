@@ -55,6 +55,7 @@ func (h *UserHandler) GetJWT(w http.ResponseWriter, r *http.Request) {
 	}
 
 	u, err := h.UserDB.FindByEmail(user.Email)
+
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
@@ -66,8 +67,9 @@ func (h *UserHandler) GetJWT(w http.ResponseWriter, r *http.Request) {
 
 	_, tokenString, _ := h.Jwt.Encode(map[string]interface{}{
 		"sub": u.ID.String(),
-		"exp": time.Now().Add(time.Duration(h.JwtExperiesIn)),
+		"exp": time.Now().Add(time.Second * time.Duration(3000)).Unix(),
 	})
+
 	acessToken := struct {
 		AcessToken string `json:"access_token"`
 	}{

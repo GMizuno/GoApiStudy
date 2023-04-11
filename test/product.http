@@ -6,6 +6,10 @@ Content-Type: application/json
   "price": 101
 }
 
+###
+GET http://localhost:8000/products/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODExNzM5MzIsInN1YiI6IjAyNTEyNWJmLWIzNjYtNDQxNS1iMDVlLWYwZmQxMmE5ZTljMCJ9.M9Q6hnsLHFgw6otvaYX6_q8jSWVtAtwZXycD-maBIQY
+
 
 ###
 GET http://localhost:8000/products/ae645369-19da-45df-bcbd-a7ed8aebc90f
